@@ -36,11 +36,12 @@ function response(){
               trueNumber.push(response);       
        }
       }
-      document.getElementById(`container`).innerHTML =`i numeri che hai inserito nel modo corretto sono: ${trueNumber}, quindi hai indovinato ${trueNumber.length} numeri`
+      document.getElementById(`responce`).innerHTML =`i numeri che hai inserito nel modo corretto sono: ( ${trueNumber}) quindi hai indovinato (${trueNumber.length}) numeri`
 }
 
 let btn = document.getElementById(`my-btn`);
 btn.addEventListener(`click`, function(){
+    box.innerHTML = "";
     generatorNumber(listNumber, 5);
     
     for( let i = 0; i < listNumber.length; i++){
