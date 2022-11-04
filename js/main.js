@@ -1,13 +1,13 @@
+`use strict`;
 
 const listNumber = [];
-
+const trueNumber = [];
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
 }
-
 
 function generatorNumber(array, slotArray){ 
     while(array.length< slotArray){
@@ -17,9 +17,36 @@ function generatorNumber(array, slotArray){
         }
     }
 }
-generatorNumber(listNumber, 5);
-console.log(listNumber)
 
-document.getElementById(`container`).innerHTML =`questi sono i numeri da ricordare: ${listNumber}`
+function clear(){
+    document.getElementById(`container`).innerHTML =`quali sono i numeri?`;
+}
+
+function response(){
+
+    console.log(listNumber)
+    for( let i = 0; i < listNumber.length; i++){
+        const response = Number(window.prompt(`numero da inserire`, ``));
+
+      if( listNumber.includes(response)){
+
+              trueNumber.push(response);       
+       }
+      }
+      document.getElementById(`container`).innerHTML =`i numeri che hai inserito nel modo corretto sono: ${trueNumber}, quindi hai indovinato ${trueNumber.length} numeri`
+}
+
+let btn = document.getElementById(`my-btn`);
+btn.addEventListener(`click`, function(){
+    generatorNumber(listNumber, 5);
+    document.getElementById(`container`).innerHTML =`questi sono i numeri da ricordare: ${listNumber}`;
+
+    
+    setTimeout(clear, 3000);
+    setTimeout(response, 4000);
+})
+
+
+
 
 
