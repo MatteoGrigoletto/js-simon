@@ -1,0 +1,19 @@
+#box div{
+height: 100px;
+width: 100px;
+text-align: center;
+line-height: 100px;
+
+}
+.bg-blue{
+    background-color: rgb(144, 144, 226);
+}
+
+#box{
+    display: flex;
+    justify-content: space-around;
+
+}
+.d-none{
+    display: none;
+}
